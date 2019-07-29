@@ -5,7 +5,8 @@
   "main": "index.js",
   "engines": {
     "node": "10.x",
-    "npm": "6.x"
+    "npm": "6.x",
+    "yarn": "1.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +14,7 @@
     "server": "nodemon index.js",
     "client": "cd client && yarn start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client && yarn add && yarn build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client && yarn && yarn build"
   },
   "author": "",
   "license": "ISC",
