@@ -9,7 +9,7 @@ class SurveyForm extends Component {
   render() {
     return (
       <div>
-        <h5>Please fill in the details.</h5>
+        <h3>Create a new survey</h3>
         <form onSubmit={this.props.handleSubmit(this.props.onSurveyFormNext)}>
           {formFields.map(({ label, name }) =>
             <Field
@@ -24,7 +24,7 @@ class SurveyForm extends Component {
             Cancel
             <i className="right material-icons">cancel</i>
           </Link>
-          <button type="submit" className="blue btn-flat right white-text">
+          <button type="submit" className="indigo btn-flat right white-text">
             Next
             <i className="right material-icons">navigate_next</i>
           </button>
