@@ -33,19 +33,24 @@ class Header extends Component {
 
   render() {
     return (
-      <nav>
-        <div className="nav-wrapper">
-          <Link
-            to={this.props.auth ? "/surveys" : "/"}
-            className="left brand-logo"
-          >
-            Fankuio
-          </Link>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
-            {this.renderContent()}
-          </ul>
-        </div>
-      </nav>
+      <div class="navbar-fixed">
+        <nav>
+          <div className="nav-wrapper indigo darken-1">
+            <div className="container">
+              <Link
+                to={this.props.auth ? "/surveys" : "/"}
+                className="left brand-logo"
+              >
+                <i className="large material-icons">mms</i>
+                Fankuio
+              </Link>
+              <ul id="nav-mobile" className="right hide-on-med-and-down">
+                {this.renderContent()}
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
     );
   }
 }
