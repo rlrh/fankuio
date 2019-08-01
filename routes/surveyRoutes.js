@@ -29,6 +29,7 @@ module.exports = app => {
       subject,
       body,
       recipients: recipients.split(",").map(email => ({ email: email.trim() })),
+      unresponded: recipients.split(",").length,
       _user: req.user.id,
       dateSent: Date.now()
     });
@@ -54,8 +55,7 @@ module.exports = app => {
         const match = p.test(new URL(url).pathname);
         if (match) {
           return { email, surveyId: match.surveyId, choice: match.choice };
-        }
-        s;
+        };
       })
       .compact()
       .uniqBy("surveyId", "email")
@@ -68,7 +68,8 @@ module.exports = app => {
             }
           },
           {
-            $inc: { [choice]: true },
+            $inc: { [choice]: 1 },
+            $inc: { unresponded: -1 },
             $set: { "recipients.$.responded": true },
             lastResponded: new Date()
           }

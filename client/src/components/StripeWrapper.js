@@ -13,7 +13,7 @@ class StripeWrapper extends Component {
         token={this.props.handleToken}
         stripeKey={process.env.REACT_APP_STRIPE_KEY}
       >
-        <button className="btn">Add Credits</button>
+        <a className="black-text">Add Credits</a>
       </StripeCheckout>
     );
   }

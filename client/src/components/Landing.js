@@ -34,7 +34,7 @@ class Landing extends Component {
               <h1 className="header center indigo-text">Fankuio</h1>
               <div className="row center">
                 <h5 className="header col s12 light indigo-text">
-                  Quick and Easy Email Surveys
+                  Quick, Easy, Simple Email Surveys
                 </h5>
               </div>
               <div className="row center">
@@ -49,46 +49,41 @@ class Landing extends Component {
             <div className="row">
               <div className="col s12 m4">
                 <div className="icon-block">
-                  <h2 className="center light-blue-text">
+                  <h2 className="center indigo-text">
                     <i className="large material-icons">flash_on</i>
                   </h2>
-                  <h5 className="center">Speeds up development</h5>
+                  <h5 className="center">Lightning-fast Surveys</h5>
                   <p className="light">
-                    We did most of the heavy lifting for you to provide a default
-                    stylings that incorporate our custom components. Additionally,
-                    we refined animations and transitions to provide a smoother
-                    experience for developers.
+                    Quickly get feedback on anything, with an easy-to-use
+                    interface that makes creating surveys a breeze and
+                    shows all the results at a glance.
                   </p>
                 </div>
               </div>
 
               <div className="col s12 m4">
                 <div className="icon-block">
-                  <h2 className="center light-blue-text">
+                  <h2 className="center indigo-text">
                     <i className="large material-icons">group</i>
                   </h2>
-                  <h5 className="center">User Experience Focused</h5>
+                  <h5 className="center">Hassle-free for Surveyees</h5>
                   <p className="light">
-                    By utilizing elements and principles of Material Design, we
-                    were able to create a framework that incorporates components
-                    and animations that provide more feedback to users.
-                    Additionally, a single underlying responsive system across all
-                    platforms allow for a more unified user experience.
+                    Improve your survey click-through rate by keeping the survey 
+                    question and answer links right in the email, 
+                    making it quick, easy and simple for your surveyees.
                   </p>
                 </div>
               </div>
 
               <div className="col s12 m4">
                 <div className="icon-block">
-                  <h2 className="center light-blue-text">
+                  <h2 className="center indigo-text">
                     <i className="large material-icons">settings</i>
                   </h2>
-                  <h5 className="center">Easy to work with</h5>
+                  <h5 className="center">Pay-as-you-go</h5>
                   <p className="light">
-                    We have provided detailed documentation as well as specific
-                    code examples to help new users get started. We are also
-                    always open to feedback and can answer any questions a user
-                    may have about Materialize.
+                    With a stored credit system where one credit lets you send out one survey,
+                    say goodbye to monthly subscriptions.
                   </p>
                 </div>
               </div>

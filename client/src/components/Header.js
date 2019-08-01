@@ -2,8 +2,23 @@ import React, { Fragment, Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import StripeWrapper from "./StripeWrapper";
+import M from "materialize-css";
 
 class Header extends Component {
+
+  componentDidUpdate() {
+    let dropdowns = document.querySelectorAll('.dropdown-trigger');
+    
+    let options = {
+        inDuration: 300,
+        outDuration: 300,
+        hover: true, // Activate on hover
+        coverTrigger: false, // Displays dropdown below the button
+    };
+    
+    M.Dropdown.init(dropdowns, options);
+  }
+
   renderContent() {
     switch (this.props.auth) {
       case null:
@@ -11,20 +26,32 @@ class Header extends Component {
       case false:
         return (
           <li>
-            <a href="/auth/google">Login With Google</a>
+            <a href="/auth/google">Sign In With Google</a>
           </li>
         );
       default:
         return (
           <Fragment>
             <li>
-              <StripeWrapper />
-            </li>
-            <li style={{ margin: "0 10px" }}>
-              Credits: {this.props.auth.credits}
+              <Link
+                to="/surveys"
+              >
+                Dashboard
+              </Link>
             </li>
             <li>
-              <a href="/api/logout">Logout</a>
+              <a className="dropdown-trigger valign-wrapper" data-target="creditsDropdown">
+                <i className="material-icons left">attach_money</i>
+                {this.props.auth.credits} credits
+                <i className="material-icons right">arrow_drop_down</i>
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-trigger valign-wrapper" data-target="authDropdown">
+                <img src={this.props.auth.photoUrl} alt="" style={{ marginRight: "12px" }} className="circle nav-img" />
+                {this.props.auth.displayName}
+                <i className="material-icons right">arrow_drop_down</i>
+              </a>
             </li>
           </Fragment>
         );
@@ -33,12 +60,12 @@ class Header extends Component {
 
   render() {
     return (
-      <div class="navbar-fixed">
+      <div className="navbar-fixed">
         <nav>
           <div className="nav-wrapper indigo darken-1">
             <div className="container">
               <Link
-                to={this.props.auth ? "/surveys" : "/"}
+                to="/"
                 className="left brand-logo"
               >
                 <i className="large material-icons">mms</i>
@@ -50,6 +77,12 @@ class Header extends Component {
             </div>
           </div>
         </nav>
+        <ul id="authDropdown" className="dropdown-content">
+          <a href="/api/logout" className="black-text">Sign Out</a>
+        </ul>
+        <ul id="creditsDropdown" className="dropdown-content">
+          <StripeWrapper />
+        </ul>
       </div>
     );
   }
