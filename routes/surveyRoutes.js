@@ -68,8 +68,7 @@ module.exports = app => {
             }
           },
           {
-            $inc: { [choice]: 1 },
-            $inc: { unresponded: -1 },
+            $inc: { [choice]: 1,  unresponded: -1 },
             $set: { "recipients.$.responded": true },
             lastResponded: new Date()
           }
