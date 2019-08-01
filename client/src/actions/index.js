@@ -25,24 +25,15 @@ export const handleToken = token => {
 
 export const submitSurvey = (values, callback) => {
   return async dispatch => {
-    try {
-      const res = await axios.post("/api/surveys", values);
-      callback();
-      dispatch({ type: FETCH_USER, payload: res.data });
-    } catch (error) {
-      callback();
-      dispatch({ type: FETCH_USER });
-    }
+    const res = await axios.post("/api/surveys", values);
+    callback();
+    dispatch({ type: FETCH_USER, payload: res.data });
   };
 };
 
 export const fetchSurveys = () => {
   return async dispatch => {
-    try {
-      const res = await axios.get("/api/surveys");
-      dispatch({ type: FETCH_SURVEYS, payload: res.data });
-    } catch (error) {
-      dispatch({ type: FETCH_SURVEYS });
-    }
+    const res = await axios.get("/api/surveys");
+    dispatch({ type: FETCH_SURVEYS, payload: res.data });
   };
 };
