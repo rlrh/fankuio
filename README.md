@@ -1,9 +1,10 @@
 # Fankuio
 Email survey web app for Node with React Udemy course
 
-# Getting Started
+### Getting Started
 
 Requires a MongoDB database, and signing up for Google Developer, Stripe and SendGrid.
+
 Create a `dev.js` file in `/config` with:
 ```
 module.exports = {
